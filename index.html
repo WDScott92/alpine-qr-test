@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Manuals, warranty, spec sheet and AHRI certificate for the Blueridge BXS2A09SC0 9,000 BTU outdoor unit.">
+<title>BXS2A09SC0 Documents</title>
+<style>
+/* base reset (normally supplied by the host) */
+:root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+body { margin: 0; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Barlow+Semi+Condensed:wght@600;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: one phone-width column. An equipment rating plate confirms the unit, then full-width tap rows grouped by what the reader is trying to do. */
+:root {
+  --paper: #eef2f5;
+  --surface: #ffffff;
+  --ink: #13202a;
+  --muted: #55636e;
+  --line: #d3dce3;
+  --accent: #0a5c9e;
+  --accent-soft: #e2eef8;
+  --plate: #dfe6eb;
+  --plate-edge: #b9c5ce;
+  --plate-ink: #1b2933;
+  --font-display: "Barlow Semi Condensed", "Arial Narrow", "Roboto Condensed", sans-serif;
+  --font-body: "Atkinson Hyperlegible", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-data: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0d1419;
+    --surface: #152029;
+    --ink: #e4ecf1;
+    --muted: #98a8b3;
+    --line: #273743;
+    --accent: #6db3ee;
+    --accent-soft: #17324a;
+    --plate: #1c2a34;
+    --plate-edge: #34495a;
+    --plate-ink: #dbe4ea;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0d1419;
+  --surface: #152029;
+  --ink: #e4ecf1;
+  --muted: #98a8b3;
+  --line: #273743;
+  --accent: #6db3ee;
+  --accent-soft: #17324a;
+  --plate: #1c2a34;
+  --plate-edge: #34495a;
+  --plate-ink: #dbe4ea;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+}
+.wrap {
+  max-width: 34rem;
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 1.25rem 2.5rem;
+  display: grid;
+  gap: 1.75rem;
+}
+
+/* Header */
+.brand {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.brand span:last-child { color: var(--muted); font-weight: 600; }
+h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.1rem, 9vw, 2.75rem);
+  line-height: 1;
+  letter-spacing: 0.01em;
+  margin: 0;
+  text-wrap: balance;
+}
+.lede { margin: 0.5rem 0 0; color: var(--muted); max-width: 32rem; }
+header { display: grid; gap: 0.25rem; }
+
+/* Rating plate */
+.plate {
+  position: relative;
+  background: var(--plate);
+  color: var(--plate-ink);
+  border: 1px solid var(--plate-edge);
+  border-radius: 6px;
+  padding: 1rem 1.25rem 0.9rem;
+}
+.plate::before, .plate::after {
+  content: "";
+  position: absolute;
+  top: 0.5rem;
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--plate-edge);
+}
+.plate::before { left: 0.5rem; }
+.plate::after { right: 0.5rem; }
+.plate-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0 0 0.75rem;
+  color: var(--muted);
+}
+.plate dl {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem 1rem;
+  margin: 0;
+}
+.plate div { min-width: 0; border-top: 1px solid var(--plate-edge); padding-top: 0.35rem; }
+.plate dt {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.plate dd {
+  margin: 0;
+  font-family: var(--font-data);
+  font-weight: 500;
+  font-size: 0.95rem;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+.plate .wide { grid-column: 1 / -1; }
+.plate-note { margin: 0.8rem 0 0; font-size: 0.85rem; color: var(--muted); }
+
+/* Document groups */
+section { display: grid; gap: 0.6rem; }
+h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0;
+}
+.docs { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.5rem; }
+.doc {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.9rem;
+  min-height: 4.5rem;
+  padding: 0.85rem 1rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 120ms ease, background-color 120ms ease;
+}
+.doc:hover { border-color: var(--accent); }
+.doc:active { background: var(--accent-soft); }
+.doc:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.badge {
+  display: grid;
+  place-items: center;
+  width: 2.6rem; height: 3.1rem;
+  border: 1.5px solid var(--accent);
+  border-radius: 4px 12px 4px 4px;
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+}
+.doc-text { min-width: 0; display: grid; gap: 0.1rem; }
+.doc-title { font-weight: 700; font-size: 1.05rem; line-height: 1.3; }
+.doc-desc { color: var(--muted); font-size: 0.92rem; line-height: 1.4; }
+.doc-meta {
+  font-family: var(--font-data);
+  font-size: 0.78rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.open {
+  width: 1.4rem; height: 1.4rem;
+  color: var(--accent);
+}
+.primary .doc { border-color: var(--accent); }
+
+/* Help */
+.help {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 1rem;
+  display: grid;
+  gap: 0.75rem;
+}
+.help p { margin: 0; }
+.phone-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 0.9rem; }
+.phone {
+  font-family: var(--font-data);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+  user-select: all;
+  font-variant-numeric: tabular-nums;
+}
+button.copy {
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  border: 1.5px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  cursor: pointer;
+  min-height: 2.5rem;
+}
+button.copy:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.text-link { color: var(--accent); font-weight: 700; text-underline-offset: 3px; }
+
+footer { color: var(--muted); font-size: 0.82rem; display: grid; gap: 0.25rem; }
+footer p { margin: 0; }
+
+@media (prefers-reduced-motion: reduce) { .doc { transition: none; } }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <div class="brand"><span>Alpine Home Air</span><span>Blueridge</span></div>
+    <h1>BXS2A09SC0</h1>
+    <p class="lede">9,000 BTU single-zone outdoor unit, XS2 Series ductless mini-split heat pump.</p>
+  </header>
+
+  <div class="plate" aria-label="Unit details">
+    <p class="plate-title">Rating plate summary</p>
+    <dl>
+      <div><dt>Cooling</dt><dd>9,000 BTU/h</dd></div>
+      <div><dt>Heating (max)</dt><dd>10,000 BTU/h</dd></div>
+      <div><dt>SEER2 / EER2</dt><dd>21.6 / 12.6</dd></div>
+      <div><dt>HSPF2</dt><dd>9.4</dd></div>
+      <div><dt>Refrigerant</dt><dd>R-454B</dd></div>
+      <div><dt>Power</dt><dd>208–230 V</dd></div>
+      <div class="wide"><dt>Matched indoor unit · AHRI ref.</dt><dd>BXS2A09WM0 · 217328208</dd></div>
+    </dl>
+    <p class="plate-note">Check that the model number on your unit's label matches BXS2A09SC0.</p>
+  </div>
+
+  <section class="primary" aria-labelledby="g-start">
+    <h2 id="g-start">Start here</h2>
+    <ul class="docs">
+      <li>
+        <a class="doc" href="https://documents.alpinehomeair.com/product/bxsa2ainstallationinstructions%5FFC6E786E%2DAE45%2D469B%2DA50C%2D5527155A1B73%2Epdf" target="_blank" rel="noopener">
+          <span class="badge" aria-hidden="true">PDF</span>
+          <span class="doc-text">
+            <span class="doc-title">Owner's &amp; Installation Manual</span>
+            <span class="doc-desc">Operation, cleaning and troubleshooting first, then full installation steps.</span>
+            <span class="doc-meta">61 pages · 6.5 MB</span>
+          </span>
+          <svg class="open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+        </a>
+      </li>
+      <li>
+        <a class="doc" href="https://documents.alpinehomeair.com/product/blueridgeductlessmini%2Dsplitwarranty%5F3F9C5C04%2D05A6%2D45B3%2DBB2B%2D8A56B01753AB%2Epdf" target="_blank" rel="noopener">
+          <span class="badge" aria-hidden="true">PDF</span>
+          <span class="doc-text">
+            <span class="doc-title">Limited Warranty</span>
+            <span class="doc-desc">5-year parts and 7-year compressor coverage, with the record form for your installer's details and serial number.</span>
+            <span class="doc-meta">180 KB</span>
+          </span>
+          <svg class="open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="g-specs">
+    <h2 id="g-specs">Specs &amp; ratings</h2>
+    <ul class="docs">
+      <li>
+        <a class="doc" href="https://documents.alpinehomeair.com/product/21seer2xs2entryag1120241018oemxlsx%2Dcopyof9k%5F81748C7B%2DC99D%2D4297%2DB862%2D38822C69E018%2Epdf" target="_blank" rel="noopener">
+          <span class="badge" aria-hidden="true">PDF</span>
+          <span class="doc-text">
+            <span class="doc-title">Specifications Sheet</span>
+            <span class="doc-desc">Dimensions, weights, electrical (MCA/MOCP), line set sizes and maximum lengths.</span>
+            <span class="doc-meta">3.0 MB</span>
+          </span>
+          <svg class="open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+        </a>
+      </li>
+      <li>
+        <a class="doc" href="https://documents.alpinehomeair.com/product/bxs2a09sc0%2D9wm0performancespecifications8%5F6D0711BF%2DC183%2D4BB3%2D92AC%2D4FB62F34016F%2Epdf" target="_blank" rel="noopener">
+          <span class="badge" aria-hidden="true">PDF</span>
+          <span class="doc-text">
+            <span class="doc-title">Extended Performance Data</span>
+            <span class="doc-desc">Heating and cooling capacity, power draw and COP across outdoor temperatures.</span>
+            <span class="doc-meta">299 KB</span>
+          </span>
+          <svg class="open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+        </a>
+      </li>
+      <li>
+        <a class="doc" href="https://documents.alpinehomeair.com/product/blueridgebxs2a09sc0%2Dbxs2a09wm0ahricertificate217328208%5F385AB9BD%2DE73F%2D4715%2DA6A1%2DC493FDB3359C%2Epdf" target="_blank" rel="noopener">
+          <span class="badge" aria-hidden="true">PDF</span>
+          <span class="doc-text">
+            <span class="doc-title">AHRI Certificate 217328208</span>
+            <span class="doc-desc">Certified efficiency ratings for this outdoor unit with BXS2A09WM0. Rebate and permit forms often ask for it.</span>
+            <span class="doc-meta">135 KB</span>
+          </span>
+          <svg class="open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="g-tech">
+    <h2 id="g-tech">For technicians</h2>
+    <ul class="docs">
+      <li>
+        <a class="doc" href="https://documents.alpinehomeair.com/product/blueridgeauroraseriesnotorderingservicemanual%5FF9045345%2D6B8B%2D492F%2D9560%2D6F4B4DF42A89%2Epdf" target="_blank" rel="noopener">
+          <span class="badge" aria-hidden="true">PDF</span>
+          <span class="doc-text">
+            <span class="doc-title">Service Manual</span>
+            <span class="doc-desc">Wiring diagrams, refrigerant recharge, error codes and troubleshooting procedures.</span>
+            <span class="doc-meta">135 pages · 9.3 MB</span>
+          </span>
+          <svg class="open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <div class="help">
+    <p><strong>Questions about your system?</strong> Call Alpine Home Air support.</p>
+    <div class="phone-row">
+      <a class="phone" id="phone" href="tel:+18887513321">888-751-3321</a>
+      <button class="copy" id="copy-phone" type="button">Copy number</button>
+    </div>
+    <p><a class="text-link" href="https://www.alpinehomeair.com/product/air-conditioning-cooling/ductless-mini-splits/mini-split-components/blueridge/bxs2a09sc0" target="_blank" rel="noopener">View this product on alpinehomeair.com</a></p>
+  </div>
+
+  <footer>
+    <p>Larger manuals can take a minute to open on a cellular connection.</p>
+    <p>Alpine Item No. 737791</p>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var btn = document.getElementById('copy-phone');
+  var num = document.getElementById('phone');
+  function selectNumber() {
+    try {
+      var r = document.createRange();
+      r.selectNodeContents(num);
+      var s = window.getSelection();
+      s.removeAllRanges();
+      s.addRange(r);
+    } catch (e) {}
+  }
+  btn.addEventListener('click', function () {
+    var done = function () { btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = 'Copy number'; }, 2000); };
+    try {
+      navigator.clipboard.writeText('888-751-3321').then(done, function () { selectNumber(); btn.textContent = 'Number selected'; });
+    } catch (e) {
+      selectNumber();
+      btn.textContent = 'Number selected';
+    }
+  });
+})();
+</script>
+</body>
+</html>
