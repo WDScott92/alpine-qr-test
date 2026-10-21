@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Product Documents</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* One template for every SKU. The page reads ?sku= from its address and fills itself from skus.json.
+   Blueridge Design System, "Clear light" composition. Light only by design. */
+:root {
+  color-scheme: light;
+  --br-navy: #0b2341;
+  --br-summit: #1e4f78;
+  --br-mist: #d5e2e9;
+  --br-snow: #f6f5f2;
+  --br-white: #ffffff;
+  --br-graphite: #2c3136;
+  --br-slate: #63676a;
+  --br-action-active: #0e3557;
+  --br-border: #b9c9d2;
+  --br-border-subtle: #dde5ea;
+  --br-font-text: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --br-font-mono: "JetBrains Mono", Consolas, monospace;
+  --br-radius-control: 0.25rem;
+  --br-radius-card: 0.375rem;
+  --br-touch: 2.75rem;
+  --br-ease: cubic-bezier(0.2, 0, 0, 1);
+  --br-gutter-l: max(1.25rem, env(safe-area-inset-left, 0px));
+  --br-gutter-r: max(1.25rem, env(safe-area-inset-right, 0px));
+}
+* { box-sizing: border-box; }
+html { background: var(--br-snow); color: var(--br-navy); font-family: var(--br-font-text); line-height: 1.6; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: 100%; }
+body { margin: 0; font-size: 1rem; background: var(--br-snow); }
+h1, h2 { font-weight: 700; letter-spacing: -0.016em; margin: 0; text-wrap: balance; }
+p { margin: 0; text-wrap: pretty; }
+a { color: var(--br-summit); text-decoration-thickness: 0.08em; text-underline-offset: 0.18em; }
+a:hover { color: var(--br-navy); }
+:focus-visible { outline: 3px solid var(--br-summit); outline-offset: 3px; }
+img { max-width: 100%; }
+.br-header { background: var(--br-navy); padding-top: env(safe-area-inset-top, 0px); }
+.br-header__inner { max-width: 40rem; margin: 0 auto; min-height: 4rem; display: flex; align-items: center; padding-left: var(--br-gutter-l); padding-right: var(--br-gutter-r); }
+.br-header img { display: block; height: 2rem; width: auto; }
+.wrap { max-width: 40rem; margin: 0 auto; padding-left: var(--br-gutter-l); padding-right: var(--br-gutter-r); padding-block: 2rem 3rem; display: grid; gap: 1.5rem; }
+.intro { display: grid; gap: 0.75rem; }
+.br-eyebrow { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; line-height: 1.25; text-transform: uppercase; color: var(--br-summit); }
+h1 { font-size: clamp(1.875rem, 7vw, 2.5rem); line-height: 1.12; }
+.lede { color: var(--br-graphite); font-size: 1.0625rem; line-height: 1.55; max-width: 34rem; }
+.br-spec { font-family: var(--br-font-mono); font-size: 0.8125rem; font-variant-numeric: tabular-nums; color: var(--br-graphite); line-height: 1.45; }
+.br-meta { color: var(--br-slate); font-size: 0.875rem; line-height: 1.5; }
+.br-meta--tight { font-size: 0.8125rem; line-height: 1.45; }
+.br-card { background: var(--br-white); border: 1px solid var(--br-border); border-radius: var(--br-radius-card); padding: 1.5rem 1.25rem; display: grid; gap: 0.75rem; min-width: 0; }
+.br-card--lead { border-top: 0.25rem solid var(--br-summit); border-radius: 0 0 var(--br-radius-card) var(--br-radius-card); }
+.br-card--cool { background: var(--br-mist); }
+h2 { font-size: 1.25rem; line-height: 1.25; font-weight: 600; letter-spacing: -0.01em; }
+.ratings { width: 100%; border-collapse: collapse; }
+.ratings th, .ratings td { padding: 0.5rem 0; border-bottom: 1px solid var(--br-border-subtle); vertical-align: baseline; }
+.ratings tr:last-child th, .ratings tr:last-child td { border-bottom: 0; }
+.ratings th { text-align: left; font-weight: 400; font-size: 0.9375rem; color: var(--br-graphite); padding-right: 1rem; }
+.ratings td { text-align: right; font-family: var(--br-font-mono); font-size: 0.875rem; font-weight: 500; font-variant-numeric: tabular-nums; color: var(--br-navy); white-space: nowrap; }
+.docs { list-style: none; margin: 0; padding: 0; }
+.docs li + li { border-top: 1px solid var(--br-border-subtle); }
+.br-docrow { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 0.875rem; align-items: start; min-height: var(--br-touch); padding: 0.875rem 0.5rem; margin: 0 -0.5rem; border-radius: var(--br-radius-control); color: inherit; text-decoration: none; transition: background 200ms var(--br-ease), transform 120ms var(--br-ease); }
+.br-docrow:hover { background: rgba(11, 35, 65, 0.06); color: inherit; }
+.br-docrow:active { transform: translateY(1px); }
+.ico20 { color: var(--br-summit); width: 1.25rem; height: 1.25rem; margin-top: 0.125rem; }
+.br-docrow__main { display: grid; gap: 0.125rem; min-width: 0; }
+.br-docrow__title { font-weight: 600; font-size: 1rem; line-height: 1.35; color: var(--br-navy); }
+svg { display: block; width: 100%; height: 100%; }
+.actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.br-btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; min-height: var(--br-touch); padding: 0.75rem 1.25rem; border: 2px solid var(--br-summit); border-radius: var(--br-radius-control); background: var(--br-summit); color: var(--br-white); font: 700 1rem/1 var(--br-font-text); text-decoration: none; cursor: pointer; white-space: nowrap; transition: background 200ms var(--br-ease), border-color 200ms var(--br-ease), color 200ms var(--br-ease), transform 120ms var(--br-ease); }
+.br-btn:hover { background: var(--br-navy); border-color: var(--br-navy); color: var(--br-white); }
+.br-btn:active { background: var(--br-action-active); border-color: var(--br-action-active); transform: translateY(1px); }
+.br-btn--secondary { background: transparent; color: var(--br-summit); }
+.br-btn--secondary:hover { background: var(--br-white); border-color: var(--br-navy); color: var(--br-navy); }
+.br-btn .ico { width: 1.0625rem; height: 1.0625rem; }
+.phone { font-weight: 600; font-size: 1.25rem; font-variant-numeric: tabular-nums; color: var(--br-navy); user-select: all; }
+.br-footer { background: var(--br-navy); color: var(--br-mist); padding-bottom: env(safe-area-inset-bottom, 0px); }
+.br-footer__inner { max-width: 40rem; margin: 0 auto; padding-left: var(--br-gutter-l); padding-right: var(--br-gutter-r); padding-block: 2rem; display: grid; gap: 1rem; }
+.br-footer img { display: block; height: 1.5rem; width: auto; }
+.br-footer p { font-size: 0.875rem; line-height: 1.5; max-width: 60ch; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: 0.01ms !important; } }
+</style>
+</head>
+<body>
+
+<header class="br-header">
+  <div class="br-header__inner">
+    <img src="blueridge-lockup.png" width="384" height="72" alt="Blueridge">
+  </div>
+</header>
+
+<main class="wrap" id="app">
+  <p class="br-meta" id="status">Loading documents…</p>
+  <noscript><p class="br-meta">This page needs JavaScript. Find this product's documents on <a href="https://www.alpinehomeair.com/">alpinehomeair.com</a>.</p></noscript>
+</main>
+
+<footer class="br-footer">
+  <div class="br-footer__inner">
+    <img src="blueridge-lockup.png" width="384" height="72" alt="Blueridge">
+    <p>Blueridge is sold and supported online by Alpine Home Air. Warranty is administered by the legal warrantor named in the limited warranty document.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var NS = 'http://www.w3.org/2000/svg';
+  var ICONS = {
+    file: ['M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z', 'M14 2v4a2 2 0 0 0 2 2h4', 'M10 9H8', 'M16 13H8', 'M16 17H8'],
+    open: ['M7 7h10v10', 'M7 17 17 7'],
+    phone: ['M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z']
+  };
+  var app = document.getElementById('app');
+
+  function el(tag, cls, text) {
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text != null) n.textContent = text;
+    return n;
+  }
+  function icon(name, cls) {
+    var wrap = el('span', cls);
+    wrap.setAttribute('aria-hidden', 'true');
+    var svg = document.createElementNS(NS, 'svg');
+    svg.setAttribute('viewBox', '0 0 24 24');
+    svg.setAttribute('fill', 'none');
+    svg.setAttribute('stroke', 'currentColor');
+    svg.setAttribute('stroke-width', '2');
+    svg.setAttribute('stroke-linecap', 'round');
+    svg.setAttribute('stroke-linejoin', 'round');
+    ICONS[name].forEach(function (d) {
+      var p = document.createElementNS(NS, 'path');
+      p.setAttribute('d', d);
+      svg.appendChild(p);
+    });
+    wrap.appendChild(svg);
+    return wrap;
+  }
+  function docRow(doc) {
+    var li = el('li');
+    var a = el('a', 'br-docrow');
+    a.href = doc.url;
+    a.target = '_blank';
+    a.rel = 'noopener';
+    a.appendChild(icon('file', 'ico20'));
+    var main = el('span', 'br-docrow__main');
+    main.appendChild(el('span', 'br-docrow__title', doc.title));
+    main.appendChild(el('span', 'br-meta', doc.desc));
+    main.appendChild(el('span', 'br-meta br-meta--tight', doc.meta));
+    a.appendChild(main);
+    a.appendChild(icon('open', 'ico20'));
+    li.appendChild(a);
+    return li;
+  }
+  function card(title, lead, cool) {
+    var s = el('section', 'br-card' + (lead ? ' br-card--lead' : '') + (cool ? ' br-card--cool' : ''));
+    s.appendChild(el('h2', null, title));
+    return s;
+  }
+  function notFound(sku, data) {
+    app.innerHTML = '';
+    var intro = el('section', 'intro');
+    intro.appendChild(el('p', 'br-eyebrow', 'Owner and installer documents'));
+    intro.appendChild(el('h1', null, sku ? 'No documents found for ' + sku : 'Which product?'));
+    intro.appendChild(el('p', 'lede', 'Check the model number on your unit’s label, or pick a product below.'));
+    app.appendChild(intro);
+    var c = card('Products on this demo', true);
+    var ul = el('ul', 'docs');
+    Object.keys(data ? data.skus : {}).forEach(function (k) {
+      var li = el('li');
+      var a = el('a', 'br-docrow');
+      a.href = '?sku=' + encodeURIComponent(k);
+      a.appendChild(icon('file', 'ico20'));
+      var m = el('span', 'br-docrow__main');
+      m.appendChild(el('span', 'br-docrow__title', data.skus[k].name));
+      m.appendChild(el('span', 'br-spec', k));
+      a.appendChild(m);
+      a.appendChild(el('span'));
+      li.appendChild(a);
+      ul.appendChild(li);
+    });
+    c.appendChild(ul);
+    app.appendChild(c);
+  }
+  function render(sku, item, data) {
+    document.title = sku + ' Documents';
+    app.innerHTML = '';
+    var intro = el('section', 'intro');
+    intro.appendChild(el('p', 'br-eyebrow', 'Owner and installer documents'));
+    intro.appendChild(el('h1', null, item.name));
+    intro.appendChild(el('p', 'lede', item.lede));
+    intro.appendChild(el('p', 'br-spec', item.spec));
+    intro.appendChild(el('p', 'br-meta', 'Check that the model number on your unit’s label reads ' + sku + '.'));
+    app.appendChild(intro);
+
+    item.groups.forEach(function (g, i) {
+      var c = card(g.title, i === 0);
+      var ul = el('ul', 'docs');
+      g.docs.forEach(function (id) { if (data.documents[id]) ul.appendChild(docRow(data.documents[id])); });
+      c.appendChild(ul);
+      app.appendChild(c);
+    });
+    app.appendChild(el('p', 'br-meta', 'Larger manuals can take a minute to open on a cellular connection.'));
+
+    var t = data.tables[item.table];
+    if (t) {
+      var tc = card(t.title);
+      var table = el('table', 'ratings');
+      var tb = el('tbody');
+      t.rows.forEach(function (r) {
+        var tr = el('tr');
+        var th = el('th', null, r[0]);
+        th.scope = 'row';
+        tr.appendChild(th);
+        tr.appendChild(el('td', null, r[1]));
+        tb.appendChild(tr);
+      });
+      table.appendChild(tb);
+      tc.appendChild(table);
+      tc.appendChild(el('p', 'br-meta br-meta--tight', t.source));
+      app.appendChild(tc);
+    }
+
+    var help = card('Get expert help', false, true);
+    help.appendChild(el('p', null, 'Alpine Home Air sells and supports Blueridge systems. Call support with questions about this unit.'));
+    var phone = el('p', 'phone', '888-751-3321');
+    help.appendChild(phone);
+    var actions = el('div', 'actions');
+    var call = el('a', 'br-btn');
+    call.href = 'tel:+18887513321';
+    call.appendChild(icon('phone', 'ico'));
+    call.appendChild(el('span', null, 'Call support'));
+    actions.appendChild(call);
+    var copy = el('button', 'br-btn br-btn--secondary', 'Copy number');
+    copy.type = 'button';
+    copy.addEventListener('click', function () {
+      function selectNumber() {
+        try { var r = document.createRange(); r.selectNodeContents(phone); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); } catch (e) {}
+        copy.textContent = 'Number selected';
+      }
+      try {
+        navigator.clipboard.writeText('888-751-3321').then(function () {
+          copy.textContent = 'Copied';
+          setTimeout(function () { copy.textContent = 'Copy number'; }, 2000);
+        }, selectNumber);
+      } catch (e) { selectNumber(); }
+    });
+    actions.appendChild(copy);
+    help.appendChild(actions);
+    var link = el('p');
+    var a = el('a', null, 'View ' + sku + ' on alpinehomeair.com →');
+    a.href = item.product;
+    a.target = '_blank';
+    a.rel = 'noopener';
+    link.appendChild(a);
+    help.appendChild(link);
+    app.appendChild(help);
+  }
+
+  var sku = (new URLSearchParams(location.search).get('sku') || '').trim().toUpperCase();
+  fetch('skus.json', {cache: 'no-cache'})
+    .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    .then(function (data) {
+      var item = data.skus[sku];
+      if (item) render(sku, item, data); else notFound(sku, data);
+    })
+    .catch(function () {
+      document.getElementById('status').textContent = 'The documents list did not load. Check your connection and refresh, or visit alpinehomeair.com.';
+    });
+})();
+</script>
+</body>
+</html>

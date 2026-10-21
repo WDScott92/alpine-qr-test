@@ -1,0 +1,110 @@
+{
+  "documents": {
+    "owners-install": {
+      "title": "Owner's and installation manual",
+      "desc": "Operation, cleaning and troubleshooting, then full installation steps for the system.",
+      "meta": "PDF · 6.5 MB · 61 pages",
+      "url": "https://documents.alpinehomeair.com/product/bxsa2ainstallationinstructions%5FFC6E786E%2DAE45%2D469B%2DA50C%2D5527155A1B73%2Epdf"
+    },
+    "remote": {
+      "title": "Remote control manual",
+      "desc": "Buttons, modes, timers and settings for the wireless remote that ships with the indoor unit.",
+      "meta": "PDF · 2.7 MB · 16 pages",
+      "url": "https://documents.alpinehomeair.com/product/blueridgexs2aremotecontrolmanual%5F16444080%2D7789%2D4143%2DB23B%2DC7B9420F46EF%2Epdf"
+    },
+    "warranty": {
+      "title": "Limited warranty",
+      "desc": "5-year parts and 7-year compressor coverage under the Blueridge ductless limited warranty. Includes the record form for installer details and serial number.",
+      "meta": "PDF · 180 KB",
+      "url": "https://documents.alpinehomeair.com/product/blueridgeductlessmini%2Dsplitwarranty%5F3F9C5C04%2D05A6%2D45B3%2DBB2B%2D8A56B01753AB%2Epdf"
+    },
+    "spec-sheet": {
+      "title": "Specifications sheet",
+      "desc": "Dimensions, weights, electrical requirements, line set sizes and maximum lengths for the system.",
+      "meta": "PDF · 3.0 MB",
+      "url": "https://documents.alpinehomeair.com/product/21seer2xs2entryag1120241018oemxlsx%2Dcopyof9k%5F81748C7B%2DC99D%2D4297%2DB862%2D38822C69E018%2Epdf"
+    },
+    "extended-performance": {
+      "title": "Extended performance data",
+      "desc": "Heating and cooling capacity, power input and efficiency (COP) across outdoor temperatures.",
+      "meta": "PDF · 299 KB",
+      "url": "https://documents.alpinehomeair.com/product/bxs2a09sc0%2D9wm0performancespecifications8%5F6D0711BF%2DC183%2D4BB3%2D92AC%2D4FB62F34016F%2Epdf"
+    },
+    "ahri": {
+      "title": "AHRI certificate 217328208",
+      "desc": "Certified ratings for BXS2A09SC0 matched with BXS2A09WM0. Rebate and permit forms often ask for it.",
+      "meta": "PDF · 135 KB · issued 14 Jul 2025",
+      "url": "https://documents.alpinehomeair.com/product/blueridgebxs2a09sc0%2Dbxs2a09wm0ahricertificate217328208%5F385AB9BD%2DE73F%2D4715%2DA6A1%2DC493FDB3359C%2Epdf"
+    },
+    "service": {
+      "title": "Service manual",
+      "desc": "Wiring diagrams, refrigerant recharge, error codes and troubleshooting procedures.",
+      "meta": "PDF · 9.3 MB · 135 pages",
+      "url": "https://documents.alpinehomeair.com/product/blueridgeauroraseriesnotorderingservicemanual%5FF9045345%2D6B8B%2D492F%2D9560%2D6F4B4DF42A89%2Epdf"
+    }
+  },
+  "tables": {
+    "system-ratings": {
+      "title": "Ratings",
+      "rows": [
+        ["Cooling capacity at 95°F", "9,000 BTU/h"],
+        ["Heating capacity at 47°F", "10,000 BTU/h"],
+        ["Maximum heating at 5°F", "7,000 BTU/h"],
+        ["SEER2", "21.6"],
+        ["EER2", "12.6"],
+        ["HSPF2, Region IV", "9.4"],
+        ["Heating operation down to", "−13°F"]
+      ],
+      "source": "Capacity at 95°F and 47°F, SEER2, EER2 and HSPF2: AHRI certificate 217328208, BXS2A09SC0 matched with BXS2A09WM0, issued 14 Jul 2025. Capacity at 5°F and operating range: Blueridge specifications sheet."
+    },
+    "indoor-details": {
+      "title": "Unit details",
+      "rows": [
+        ["Airflow, 4 fan speeds", "141 to 306 CFM"],
+        ["Sound level", "19.5 to 43 dB"],
+        ["Line set, liquid × suction", "1/4 × 3/8 in"],
+        ["Size, W × D × H", "28.7 × 7.87 × 11.5 in"],
+        ["Weight", "18.1 lb"]
+      ],
+      "source": "From the BXS2A09WM0 specifications on alpinehomeair.com. System efficiency ratings are on AHRI certificate 217328208, listed above."
+    }
+  },
+  "skus": {
+    "BXS2A09SC0": {
+      "name": "XS2 9K Single-Zone Outdoor Unit",
+      "lede": "Ductless heat pump outdoor unit for one space, matched with the BXS2A09WM0 wall-mount indoor unit.",
+      "spec": "Model BXS2A09SC0 · 208/230V · R-454B",
+      "groups": [
+        {"title": "Start here", "docs": ["owners-install", "warranty"]},
+        {"title": "Specifications and certification", "docs": ["spec-sheet", "extended-performance", "ahri"]},
+        {"title": "For service technicians", "docs": ["service"]}
+      ],
+      "table": "system-ratings",
+      "product": "https://www.alpinehomeair.com/product/air-conditioning-cooling/ductless-mini-splits/mini-split-components/blueridge/bxs2a09sc0"
+    },
+    "BXS2A09WM0": {
+      "name": "XS2 9K Wall-Mount Indoor Unit",
+      "lede": "Wall-mount indoor unit for one space, matched with the BXS2A09SC0 outdoor unit. Ships with a wireless remote.",
+      "spec": "Model BXS2A09WM0 · 208/230V · R-454B",
+      "groups": [
+        {"title": "Start here", "docs": ["owners-install", "remote", "warranty"]},
+        {"title": "Specifications and certification", "docs": ["spec-sheet", "ahri"]},
+        {"title": "For service technicians", "docs": ["service"]}
+      ],
+      "table": "indoor-details",
+      "product": "https://www.alpinehomeair.com/product/air-conditioning-cooling/ductless-mini-splits/mini-split-components/blueridge/bxs2a09wm0"
+    },
+    "BXS2A09SC0-9WM": {
+      "name": "XS2 9K Single-Zone Wall-Mount System",
+      "lede": "Matched ductless heat pump system for one space: the BXS2A09SC0 outdoor unit with the BXS2A09WM0 wall-mount indoor unit.",
+      "spec": "Model BXS2A09SC0-9WM · 208/230V · R-454B",
+      "groups": [
+        {"title": "Start here", "docs": ["owners-install", "remote", "warranty"]},
+        {"title": "Specifications and certification", "docs": ["spec-sheet", "extended-performance", "ahri"]},
+        {"title": "For service technicians", "docs": ["service"]}
+      ],
+      "table": "system-ratings",
+      "product": "https://www.alpinehomeair.com/product/air-conditioning-cooling/ductless-mini-splits/single-zone-mini-split-systems/blueridge/bxs2a09sc0-9wm"
+    }
+  }
+}
